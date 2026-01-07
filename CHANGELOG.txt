@@ -1,0 +1,80 @@
+═══════════════════════════════════════════════════════
+  ✨ CẬP NHẬT WEBSITE - PHIÊN BẢN MỚI
+═══════════════════════════════════════════════════════
+
+📅 Ngày cập nhật: 29/11/2025
+
+🔗 CẬP NHẬT LIÊN KẾT:
+───────────────────────────────────────────────────────
+✅ Link GitHub mới: https://github.com/ngngochieuu05
+   (Thay thế: https://github.com/hieudzvl125)
+
+🎨 HIỆU ỨNG MỚI:
+───────────────────────────────────────────────────────
+
+1. SKILL CARDS (Thẻ kỹ năng):
+   ✨ Hover: Bay lên cao hơn + Scale 1.05 + Xoay nhẹ 2°
+   ✨ Icon xoay 360° và phóng to khi hover
+   ✨ Shadow mạnh mẽ và gradient glow
+   ✨ Active state khi click
+
+2. SOCIAL LINKS (Liên kết mạng xã hội):
+   ✨ Hover: Xoay 720° + Bay lên + Scale 1.1
+   ✨ Ripple effect (hiệu ứng gợn sóng khi hover)
+   ✨ Gradient background animation
+   ✨ Border glow effect
+   ✨ Active state mượt mà
+
+3. STAT ITEMS (Thống kê):
+   ✨ Hover: Bay lên + Scale 1.1 + Xoay nhẹ 3°
+   ✨ Numbers bounce (số nhảy) khi hover
+   ✨ Background glow effect
+   ✨ Cursor pointer cho tương tác tốt hơn
+
+4. TIMELINE CONTENT (Dự án):
+   ✨ Hover: Bay lên + Scale 1.05
+   ✨ Glowing border và shadow mạnh
+   ✨ Inner glow effect
+   ✨ Background opacity tăng
+
+5. BUTTONS (Nút bấm):
+   ✨ Đã có sẵn: Shine effect + Pulse glow
+   ✨ Smooth animation và shadow động
+
+🎯 ĐẶC ĐIỂM NỔI BẬT:
+───────────────────────────────────────────────────────
+• Cubic-bezier timing cho animation mượt mà
+• Ripple effects (hiệu ứng gợn sóng)
+• 3D transforms (xoay, scale, translate)
+• Glowing shadows động
+• Active states responsive
+• Smooth hover transitions (0.4-0.6s)
+• Cursor pointer cho UX tốt hơn
+
+💡 TỐI ƯU TRẢI NGHIỆM:
+───────────────────────────────────────────────────────
+✓ Tất cả hiệu ứng có transition mượt
+✓ Performance tối ưu với transform + opacity
+✓ Active states để feedback khi click
+✓ Hover effects sinh động nhưng không quá "nặng"
+✓ Compatible với mọi trình duyệt hiện đại
+
+📱 RESPONSIVE:
+───────────────────────────────────────────────────────
+✓ Hiệu ứng tự động giảm trên mobile để tăng hiệu suất
+✓ Touch-friendly (thân thiện với cảm ứng)
+
+🚀 HƯỚNG DẪN SỬ DỤNG:
+───────────────────────────────────────────────────────
+1. Upload các file đã cập nhật lên hosting
+2. Clear cache trình duyệt (Ctrl + F5)
+3. Test các tương tác:
+   - Hover vào skill cards
+   - Hover vào social icons
+   - Hover vào stat numbers
+   - Hover vào timeline projects
+   - Click vào các buttons
+
+═══════════════════════════════════════════════════════
+Website giờ đã sinh động và tương tác hơn nhiều! 🎉
+═══════════════════════════════════════════════════════

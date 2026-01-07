@@ -1,0 +1,24 @@
+# MySQL Database Files
+mysql-8.4/
+
+# Backend PHP (GitHub Pages không hỗ trợ PHP)
+backend/
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Log files
+*.log
+
+# Temporary files
+*.tmp
+*.temp
