@@ -353,3 +353,30 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+
+// Contact Form - Simple validation
+const contactForm = document.getElementById('contactForm');
+const formMessage = document.getElementById('formMessage');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const subject = document.getElementById('subject').value;
+        const message = document.getElementById('message').value;
+        
+        // Show success message
+        formMessage.style.display = 'block';
+        formMessage.style.color = '#10b981';
+        formMessage.textContent = '✓ Cảm ơn bạn đã liên hệ! Vui lòng gửi email trực tiếp đến: ngngochieu05@gmail.com';
+        
+        contactForm.reset();
+        
+        // Hide message after 8 seconds
+        setTimeout(() => {
+            formMessage.style.display = 'none';
+        }, 8000);
+    });
+}
