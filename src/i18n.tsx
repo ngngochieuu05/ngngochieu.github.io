@@ -8,6 +8,7 @@ const dict = {
     navContact: 'Liên hệ',
     contactMe: 'Liên hệ',
     downloadCv: 'Xem CV',
+    cvLocked: 'Sắp cập nhật',
     aboutTitle: 'Giới thiệu',
     aboutP1:
       'Tôi là sinh viên năm thứ tư chuyên ngành Công nghệ thông tin tại HUTECH University, dự kiến tốt nghiệp năm 2027. Tôi đam mê nghiên cứu và phát triển các hệ thống thị giác máy tính, đặc biệt là nhận diện và giám sát đối tượng bằng học sâu.',
@@ -33,6 +34,7 @@ const dict = {
     navContact: 'Contact',
     contactMe: 'Get in touch',
     downloadCv: 'View CV',
+    cvLocked: 'Coming soon',
     aboutTitle: 'About',
     aboutP1:
       'I am a fourth-year Information Technology student at HUTECH University, expected to graduate in 2027. I am dedicated to researching and developing computer vision systems, particularly deep-learning-based object detection and monitoring.',

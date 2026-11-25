@@ -222,6 +222,11 @@ h1, h2 {
 .to-top:hover { background: var(--primary-hover); transform: translateY(-3px); box-shadow: var(--lift), inset 0 1px 0 var(--gloss); }
 .to-top:active { transform: translateY(0); box-shadow: var(--lift-press); }
 
+/* Locked button */
+.btn.locked { display: inline-flex; align-items: center; gap: 8px; opacity: 0.55; cursor: not-allowed; }
+.btn.locked:hover { transform: none; box-shadow: none; background: transparent; }
+.btn.locked::after { display: none; }
+
 /* Rounded buttons */
 .btn { border-radius: 12px; }
 .lang-switch button { border-radius: 12px; }
