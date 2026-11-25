@@ -15,24 +15,24 @@
 ![Ảnh chân dung](../public/images/avatar.jpeg)
 
 **Nguyễn Ngọc Hiếu**
-Khoa Công nghệ thông tin, Trường Đại học Công nghệ TP.HCM (HUTECH), TP. Hồ Chí Minh, Việt Nam
+Khoa Công nghệ thông tin, HUTECH University, TP. Hồ Chí Minh, Việt Nam
 Trung tâm nghiên cứu Vietqubit
 Email: ngngochieu125@gmail.com
 
 ## Tiểu sử
 
-Nguyễn Ngọc Hiếu là sinh viên năm thứ tư Khoa Công nghệ thông tin, chuyên ngành Máy học & Ứng dụng, Trường Đại học Công nghệ TP.HCM (HUTECH), nhập học tháng 9/2023 và dự kiến tốt nghiệp năm 2027. Từ ngày 09/11/2026, Hiếu là cộng tác viên nghiên cứu tại Trung tâm nghiên cứu Vietqubit. Hướng nghiên cứu gồm thị giác máy tính, điện toán biên và các ứng dụng trí tuệ nhân tạo đa nền tảng. Đã xây dựng nhiều hệ thống nhận diện và giám sát dựa trên học sâu, thường đảm nhận vai trò trưởng nhóm trong các dự án môn học.
+Nguyễn Ngọc Hiếu là sinh viên năm thứ tư Khoa Công nghệ thông tin, chuyên ngành Máy học & Ứng dụng, HUTECH University, nhập học tháng 9/2023 và dự kiến tốt nghiệp năm 2027. Từ ngày 09/11/2026, Hiếu là cộng tác viên nghiên cứu tại Trung tâm nghiên cứu Vietqubit. Hướng nghiên cứu gồm thị giác máy tính, điện toán biên và các ứng dụng trí tuệ nhân tạo đa nền tảng. Đã xây dựng nhiều hệ thống nhận diện và giám sát dựa trên học sâu, thường đảm nhận vai trò trưởng nhóm trong các dự án môn học.
 
 ## ② Học vấn
 
 | Thời gian | Bậc học | Trường |
 |---|---|---|
-| 09/2023 – nay | Đại học, Công nghệ thông tin, chuyên ngành Máy học & Ứng dụng (dự kiến tốt nghiệp 2027) | Khoa Công nghệ thông tin, Đại học Công nghệ TP.HCM (HUTECH) |
+| 09/2023 – nay | Đại học, Công nghệ thông tin, chuyên ngành Máy học & Ứng dụng (dự kiến tốt nghiệp 2027) | Khoa Công nghệ thông tin, HUTECH University |
 
 ## ③ Vị trí hiện tại
 
 **Cộng tác viên nghiên cứu**, Trung tâm nghiên cứu Vietqubit ([vietqubit.com](https://vietqubit.com/)), từ 09/11/2026.
-Đồng thời là sinh viên năm thứ tư, Khoa Công nghệ thông tin, HUTECH.
+Đồng thời là sinh viên năm thứ tư, Khoa Công nghệ thông tin, HUTECH University.
 
 ## ④ Hướng nghiên cứu
 
@@ -47,24 +47,24 @@ Thị giác máy tính (phát hiện đối tượng, nhận diện tư thế, n
 ![Portrait](../public/images/avatar.jpeg)
 
 **Hieu Ng Ngoc**
-Faculty of Information Technology, Ho Chi Minh City University of Technology (HUTECH), Ho Chi Minh City, Vietnam
+Faculty of Information Technology, HUTECH University, Ho Chi Minh City, Vietnam
 Vietqubit Research Center
 Email: ngngochieu125@gmail.com
 
 ## Biography
 
-Hieu Ng Ngoc is a fourth-year student in the Faculty of Information Technology, majoring in Machine Learning & Applications, at Ho Chi Minh City University of Technology (HUTECH), Vietnam, enrolled in September 2023 and expected to graduate in 2027. Since 9 November 2026, Hieu has been a research collaborator at the Vietqubit Research Center. Research interests include computer vision, edge computing and cross-platform artificial intelligence applications. Has built several deep-learning-based detection and monitoring systems and often serves as team leader on course projects.
+Hieu Ng Ngoc is a fourth-year student in the Faculty of Information Technology, majoring in Machine Learning & Applications, at HUTECH University, Vietnam, enrolled in September 2023 and expected to graduate in 2027. Since 9 November 2026, Hieu has been a research collaborator at the Vietqubit Research Center. Research interests include computer vision, edge computing and cross-platform artificial intelligence applications. Has built several deep-learning-based detection and monitoring systems and often serves as team leader on course projects.
 
 ## ② Education
 
 | Period | Degree | Institution |
 |---|---|---|
-| 09/2023 – present | B.S., Information Technology, major in Machine Learning & Applications (expected graduation 2027) | Faculty of Information Technology, Ho Chi Minh City University of Technology (HUTECH) |
+| 09/2023 – present | B.S., Information Technology, major in Machine Learning & Applications (expected graduation 2027) | Faculty of Information Technology, HUTECH University |
 
 ## ③ Current Position
 
 **Research Collaborator**, Vietqubit Research Center ([vietqubit.com](https://vietqubit.com/)), since 9 November 2026.
-Also a fourth-year student in the Faculty of Information Technology, HUTECH.
+Also a fourth-year student in the Faculty of Information Technology, HUTECH University.
 
 ## ④ Research Interests
 
