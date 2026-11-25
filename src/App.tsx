@@ -7,27 +7,6 @@ import { useTheme } from './theme';
 
 const base = import.meta.env.BASE_URL;
 
-function Flag({ lang }: { lang: Lang }) {
-  return lang === 'vi' ? (
-    <svg viewBox="0 0 30 20" width="28" height="19" aria-hidden="true">
-      <rect width="30" height="20" fill="#DA251D" />
-      <polygon points="15.00,4.00 16.35,8.14 20.71,8.15 17.19,10.71 18.53,14.85 15.00,12.30 11.47,14.85 12.81,10.71 9.29,8.15 13.65,8.14" fill="#FFFF00" />
-    </svg>
-  ) : (
-    <svg viewBox="0 0 60 30" width="28" height="14" aria-hidden="true">
-      <clipPath id="uk-s"><path d="M0,0 v30 h60 v-30 z" /></clipPath>
-      <clipPath id="uk-t"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z" /></clipPath>
-      <g clipPath="url(#uk-s)">
-        <path d="M0,0 v30 h60 v-30 z" fill="#012169" />
-        <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" strokeWidth="6" />
-        <path d="M0,0 L60,30 M60,0 L0,30" clipPath="url(#uk-t)" stroke="#C8102E" strokeWidth="4" />
-        <path d="M30,0 v30 M0,15 h60" stroke="#fff" strokeWidth="10" />
-        <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" strokeWidth="6" />
-      </g>
-    </svg>
-  );
-}
-
 function Header() {
   const { t, lang, setLang } = useI18n();
   const { theme, toggle: toggleTheme } = useTheme();
@@ -84,7 +63,7 @@ function Header() {
               aria-label={other === 'vi' ? 'Tiếng Việt' : 'English'}
               title={other === 'vi' ? 'Tiếng Việt' : 'English'}
             >
-              <Flag lang={other} />
+              {other.toUpperCase()}
             </button>
           </div>
         </div>
