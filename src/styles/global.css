@@ -14,6 +14,9 @@
   --lift: 0 8px 16px rgba(28, 25, 23, 0.22), 0 2px 4px rgba(28, 25, 23, 0.16);
   --lift-press: 0 2px 4px rgba(28, 25, 23, 0.2);
   --gloss: rgba(255, 255, 255, 0.45);
+  --band: rgba(120, 113, 108, 0.08);
+  --h-base: #1c1917;
+  --h-gleam: #8a837e;
   --primary-hover: #57534e;
   --primary-active: #44403c;
   color-scheme: light;
@@ -28,6 +31,9 @@
   --lift: 0 8px 18px rgba(0, 0, 0, 0.6), 0 2px 4px rgba(0, 0, 0, 0.5);
   --lift-press: 0 2px 4px rgba(0, 0, 0, 0.55);
   --gloss: rgba(255, 255, 255, 0.22);
+  --band: rgba(255, 255, 255, 0.05);
+  --h-base: #d6d3d1;
+  --h-gleam: #ffffff;
   --primary-active: #fafaf9;
   --secondary: #78716c;
   --ink: #fafaf9;
@@ -138,6 +144,55 @@ p { margin: 0 0 var(--u); }
 .theme-wave span { flex: 1; transform: translateY(-100%); animation: theme-fall cubic-bezier(0.55, 0, 0.8, 0.4) forwards; }
 @keyframes theme-fall { to { transform: translateY(0); } }
 
+/* Soft gleam across the whole page (very subtle) */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: -60%;
+  width: 60%;
+  z-index: 50;
+  pointer-events: none;
+  background: linear-gradient(105deg, transparent 0%, var(--band) 50%, transparent 100%);
+  transform: skewX(-12deg);
+  animation: page-gleam 11s ease-in-out 2s infinite;
+}
+@keyframes page-gleam {
+  0% { left: -60%; }
+  45%, 100% { left: 130%; }
+}
+
+/* Headings catch the light now and then */
+h1, h2 {
+  background: linear-gradient(100deg, var(--h-base) 42%, var(--h-gleam) 50%, var(--h-base) 58%);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: heading-gleam 9s ease-in-out infinite;
+}
+@keyframes heading-gleam {
+  0% { background-position: 100% 0; }
+  50%, 100% { background-position: 0 0; }
+}
+
+/* Cards and list rows gleam on hover */
+.card { position: relative; overflow: hidden; transition: border-color 0.2s, box-shadow 0.25s, transform 0.25s; }
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, transparent 20%, var(--gloss) 50%, transparent 80%);
+  opacity: 0.5;
+  transform: translateX(-120%);
+  transition: transform 0.9s ease;
+  pointer-events: none;
+}
+.card:hover::after { transform: translateX(120%); }
+.avatar { transition: box-shadow 0.3s ease; }
+.avatar:hover { box-shadow: 0 0 0 4px var(--b1), 0 10px 24px rgba(28, 25, 23, 0.25); }
+
 /* Raised, glossy buttons on hover */
 .btn, .lang-switch button, .copy-btn, .socials a {
   position: relative;
@@ -148,7 +203,7 @@ p { margin: 0 0 var(--u); }
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(115deg, transparent 30%, var(--gloss) 50%, transparent 70%);
+  background: linear-gradient(110deg, transparent 15%, var(--gloss) 50%, transparent 85%);
   transform: translateX(-120%);
   transition: transform 0.55s ease;
   pointer-events: none;
@@ -161,6 +216,8 @@ p { margin: 0 0 var(--u); }
 .btn:active, .lang-switch button:active, .copy-btn:active, .socials a:active { transform: translateY(0); box-shadow: var(--lift-press); }
 
 @media (prefers-reduced-motion: reduce) {
+  body::before, h1, h2 { animation: none !important; }
+  .card::after { display: none; }
   html { scroll-behavior: auto; }
   .btn:hover, .lang-switch button:hover, .copy-btn:hover, .socials a:hover { transform: none; }
   .btn::after, .lang-switch button::after, .copy-btn::after, .socials a::after { display: none; }
