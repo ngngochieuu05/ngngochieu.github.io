@@ -23,7 +23,6 @@ const dict = {
     location: 'Biên Hòa, Đồng Nai, Việt Nam',
     sendEmail: 'Gửi email',
     quote: 'Học hỏi, phát triển và chia sẻ kiến thức AI.',
-    switchTo: 'English',
   },
   en: {
     navAbout: 'About',
@@ -46,7 +45,6 @@ const dict = {
     location: 'Bien Hoa, Dong Nai, Vietnam',
     sendEmail: 'Send an email',
     quote: 'Learn, grow and share AI knowledge.',
-    switchTo: 'Tiếng Việt',
   },
 } as const;
 
@@ -54,7 +52,7 @@ export type Key = keyof (typeof dict)['vi'];
 
 interface Ctx {
   lang: Lang;
-  toggle: () => void;
+  setLang: (l: Lang) => void;
   t: (k: Key) => string;
 }
 
@@ -84,7 +82,7 @@ export function I18nProvider({ children }: { children: ReactNode }) {
 
   const value: Ctx = {
     lang,
-    toggle: () => setLang((l) => (l === 'vi' ? 'en' : 'vi')),
+    setLang,
     t: (k) => dict[lang][k],
   };
   return <I18n.Provider value={value}>{children}</I18n.Provider>;
