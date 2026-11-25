@@ -146,7 +146,7 @@ function Header() {
 }
 
 function Hero() {
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
   return (
     <section id="top" className="hero wrap narrow">
       <img className="avatar avatar-light" src={`${base}images/avatar.jpeg`} alt={t('name')} width={220} height={220} />
@@ -155,6 +155,9 @@ function Hero() {
       <div className="actions">
         <a className="btn btn-primary" href="#contact">
           {t('contactMe')}
+        </a>
+        <a className="btn btn-secondary" href={`${base}bio/Bio_Hieu_Ng_Ngoc_${lang}.pdf`} target="_blank" rel="noreferrer">
+          {t('viewBio')}
         </a>
         {cvUrl ? (
           <a className="btn btn-secondary" href={cvUrl} target="_blank" rel="noreferrer">
