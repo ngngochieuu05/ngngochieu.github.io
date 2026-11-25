@@ -3,6 +3,7 @@ import type { Lang } from './data/content';
 import { email, facebookUrl, githubUrl, linkedinUrl } from './data/content';
 import { icons } from './data/icons';
 import { useI18n, type Key } from './i18n';
+import { useTheme } from './theme';
 
 const base = import.meta.env.BASE_URL;
 
@@ -29,6 +30,7 @@ function Flag({ lang }: { lang: Lang }) {
 
 function Header() {
   const { t, lang, setLang } = useI18n();
+  const { theme, toggle: toggleTheme } = useTheme();
   const other: Lang = lang === 'vi' ? 'en' : 'vi';
   const links: [string, Key][] = [
     ['about', 'navAbout'],
@@ -47,6 +49,23 @@ function Header() {
           ))}
         </nav>
         <div className="lang-switch">
+          <button
+            type="button"
+            onClick={toggleTheme}
+            aria-label={theme === 'dark' ? t('lightMode') : t('darkMode')}
+            title={theme === 'dark' ? t('lightMode') : t('darkMode')}
+          >
+            {theme === 'dark' ? (
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                <circle cx="12" cy="12" r="4" />
+                <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+              </svg>
+            ) : (
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" />
+              </svg>
+            )}
+          </button>
           <button
             type="button"
             onClick={() => setLang(other)}
