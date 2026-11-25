@@ -43,6 +43,10 @@ function Header() {
   ];
   const active = useActiveSection(links.map(([id]) => id));
 
+  // Input handling: mouse = hover, keyboard = focus, touch = tap to expand.
+  const pointer = useRef<string>('mouse');
+  const wasOpen = useRef(false);
+
   // Touch screens have no hover: close the pill when tapping outside of it.
   useEffect(() => {
     const onDown = (e: PointerEvent) => {
@@ -51,18 +55,44 @@ function Header() {
     document.addEventListener('pointerdown', onDown);
     return () => document.removeEventListener('pointerdown', onDown);
   }, []);
-  const closeAfterTap = (e: React.PointerEvent) => {
-    if (e.pointerType === 'touch') window.setTimeout(() => setOpen(false), 200);
+
+  const isTouch = () => pointer.current === 'touch';
+  const closeAfterTap = () => {
+    if (isTouch() && wasOpen.current) window.setTimeout(() => setOpen(false), 200);
   };
   return (
     <header
       ref={ref}
       className={open ? 'pill open' : 'pill'}
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
-      onFocus={() => setOpen(true)}
+      onPointerDownCapture={(e) => {
+        pointer.current = e.pointerType;
+        wasOpen.current = open;
+      }}
+      onKeyDown={() => {
+        pointer.current = 'key';
+      }}
+      onClickCapture={(e) => {
+        // First tap on the collapsed pill only expands it; it must not navigate.
+        if (isTouch() && !wasOpen.current) {
+          e.preventDefault();
+          e.stopPropagation();
+          setOpen(true);
+        }
+      }}
+      onPointerEnter={(e) => {
+        if (e.pointerType === 'mouse') {
+          pointer.current = 'mouse';
+          setOpen(true);
+        }
+      }}
+      onPointerLeave={(e) => {
+        if (e.pointerType === 'mouse') setOpen(false);
+      }}
+      onFocus={() => {
+        if (!isTouch()) setOpen(true);
+      }}
       onBlur={(e) => {
-        if (!e.currentTarget.contains(e.relatedTarget as Node | null)) setOpen(false);
+        if (!isTouch() && !e.currentTarget.contains(e.relatedTarget as Node | null)) setOpen(false);
       }}
     >
       <nav aria-label="Primary" className="pill-nav">
