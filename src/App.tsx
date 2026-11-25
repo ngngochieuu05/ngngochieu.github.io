@@ -7,6 +7,29 @@ import { useTheme } from './theme';
 
 const base = import.meta.env.BASE_URL;
 
+function useActiveSection(ids: string[]) {
+  const [active, setActive] = useState(ids[0]);
+  useEffect(() => {
+    const onScroll = () => {
+      const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
+      let current = ids[0];
+      for (const id of ids) {
+        const el = document.getElementById(id);
+        if (el && el.getBoundingClientRect().top <= window.innerHeight * 0.4) current = id;
+      }
+      setActive(atBottom ? ids[ids.length - 1] : current);
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+    };
+  }, [ids.join('|')]);
+  return active;
+}
+
 function Header() {
   const { t, lang, setLang } = useI18n();
   const { theme, toggle: toggleTheme } = useTheme();
@@ -17,7 +40,7 @@ function Header() {
     ['education', 'navEducation'],
     ['contact', 'navContact'],
   ];
-  const [first, ...rest] = links;
+  const active = useActiveSection(links.map(([id]) => id));
   return (
     <header
       className={open ? 'pill open' : 'pill'}
@@ -29,13 +52,18 @@ function Header() {
       }}
     >
       <nav aria-label="Primary" className="pill-nav">
-        <a href={`#${first[0]}`}>{t(first[1])}</a>
+        {links.map(([id, k]) => (
+          <a
+            key={id}
+            href={`#${id}`}
+            className={id === active ? 'active' : ''}
+            tabIndex={open || id === active ? 0 : -1}
+            aria-current={id === active ? 'true' : undefined}
+          >
+            {t(k)}
+          </a>
+        ))}
         <div className="pill-extra" aria-hidden={!open}>
-          {rest.map(([id, k]) => (
-            <a key={id} href={`#${id}`} tabIndex={open ? 0 : -1}>
-              {t(k)}
-            </a>
-          ))}
           <span className="pill-sep" />
           <div className="lang-switch">
             <button

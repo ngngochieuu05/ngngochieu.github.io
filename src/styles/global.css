@@ -95,6 +95,11 @@ p { margin: 0 0 var(--u); }
 .pill-nav { display: flex; align-items: center; padding: 0 8px; }
 .pill-nav a { display: block; padding: 13px 24px; font-size: 16px; font-weight: 500; line-height: 1.4; color: var(--text-2); white-space: nowrap; border-radius: 999px; transition: color 0.2s, background-color 0.2s; }
 .pill-nav a:hover { color: var(--ink); background: var(--surface); }
+.pill-nav a { max-width: 0; padding-left: 0; padding-right: 0; opacity: 0; overflow: hidden; transition: max-width 1.1s cubic-bezier(0.22, 1, 0.36, 1), padding 1.1s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.8s ease, color 0.2s, background-color 0.2s; }
+.pill-nav a.active, .pill.open .pill-nav a { max-width: 260px; padding-left: 24px; padding-right: 24px; opacity: 1; }
+.pill-nav a.active { color: var(--ink); font-weight: 600; }
+.pill:not(.open) .pill-nav a.active { animation: label-in 0.5s ease; }
+@keyframes label-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 .pill-extra { display: flex; align-items: center; max-width: 0; opacity: 0; overflow: hidden; white-space: nowrap; transition: max-width 1.1s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.8s ease; }
 .pill.open .pill-extra { max-width: 760px; opacity: 1; }
 .pill-sep { width: 2px; height: 24px; margin: 0 12px; background: var(--b1); flex: none; }
