@@ -149,9 +149,9 @@ function Hero() {
   const { t } = useI18n();
   return (
     <section id="top" className="hero wrap narrow">
-      <img className="avatar avatar-light" src={`${base}images/avatar.jpeg`} alt="Nguyễn Ngọc Hiếu" width={220} height={220} />
+      <img className="avatar avatar-light" src={`${base}images/avatar.jpeg`} alt={t('name')} width={220} height={220} />
       <img className="avatar avatar-dark" src={`${base}images/avatar-dark2.jpg`} alt="" aria-hidden="true" width={220} height={220} />
-      <h1>Nguyễn Ngọc Hiếu</h1>
+      <h1>{t('name')}</h1>
       <div className="actions">
         <a className="btn btn-primary" href="#contact">
           {t('contactMe')}
@@ -317,7 +317,7 @@ export default function App() {
       <BackToTop />
       <footer className="wrap narrow footer">
         <Socials />
-        <p className="caption">© 2026 Nguyễn Ngọc Hiếu · {t('quote')}</p>
+        <p className="caption">© 2026 {t('name')} · {t('quote')}</p>
       </footer>
     </>
   );

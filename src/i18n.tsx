@@ -3,6 +3,7 @@ import type { Lang } from './data/content';
 
 const dict = {
   vi: {
+    name: 'Nguyễn Ngọc Hiếu',
     navAbout: 'Giới thiệu',
     navEducation: 'Học vấn',
     navContact: 'Liên hệ',
@@ -29,6 +30,7 @@ const dict = {
     quote: 'Học hỏi, phát triển và chia sẻ kiến thức AI.',
   },
   en: {
+    name: 'Hieu Ng Ngoc',
     navAbout: 'About',
     navEducation: 'Education',
     navContact: 'Contact',
@@ -81,6 +83,7 @@ export function I18nProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     document.documentElement.lang = lang;
+    document.title = dict[lang].name;
     try {
       localStorage.setItem('lang', lang);
     } catch {
