@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import type { Lang } from './data/content';
 import { email, facebookUrl, githubUrl, linkedinUrl } from './data/content';
 import { icons } from './data/icons';
@@ -105,6 +106,39 @@ function Education() {
   );
 }
 
+function CopyEmail() {
+  const { t } = useI18n();
+  const [copied, setCopied] = useState(false);
+  const copy = async () => {
+    try {
+      await navigator.clipboard.writeText(email);
+    } catch {
+      const ta = document.createElement('textarea');
+      ta.value = email;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      ta.remove();
+    }
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
+  };
+  return (
+    <button type="button" className="copy-btn" onClick={copy} title={t('copyEmail')} aria-label={t('copyEmail')}>
+      {copied ? (
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
+          <path d="M4 12l5 5L20 6" />
+        </svg>
+      ) : (
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+          <rect x="9" y="9" width="11" height="11" />
+          <path d="M5 15V4h11" />
+        </svg>
+      )}
+    </button>
+  );
+}
+
 function Contact() {
   const { t } = useI18n();
   return (
@@ -114,16 +148,16 @@ function Contact() {
       <ul className="list">
         <li className="row">
           <span>Email</span>
-          <a href={`mailto:${email}`}>{email}</a>
+          <span className="email-wrap">
+            <a href={`mailto:${email}`}>{email}</a>
+            <CopyEmail />
+          </span>
         </li>
         <li className="row">
           <span>{t('addressLabel')}</span>
           <span>{t('location')}</span>
         </li>
       </ul>
-      <a className="btn btn-primary" href={`mailto:${email}`}>
-        {t('sendEmail')}
-      </a>
     </section>
   );
 }

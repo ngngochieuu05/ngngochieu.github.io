@@ -14,6 +14,7 @@ const dict = {
     aboutP2:
       'Định hướng nghiên cứu hiện tại tập trung vào thị giác máy tính, điện toán biên và ứng dụng trí tuệ nhân tạo đa nền tảng. Tôi mong muốn được tiếp xúc và làm việc cùng các nhóm nghiên cứu, phát triển trong lĩnh vực này.',
     addressLabel: 'Địa chỉ',
+    copyEmail: 'Sao chép email',
     educationTitle: 'Học vấn',
     school: 'HUTECH University',
     major: 'Công nghệ thông tin - Học máy & Ứng dụng',
@@ -21,7 +22,6 @@ const dict = {
     contactTitle: 'Liên hệ',
     contactLede: 'Luôn sẵn sàng trao đổi về thực tập, hợp tác hoặc các dự án AI.',
     location: 'Biên Hòa, Đồng Nai, Việt Nam',
-    sendEmail: 'Gửi email',
     quote: 'Học hỏi, phát triển và chia sẻ kiến thức AI.',
   },
   en: {
@@ -36,6 +36,7 @@ const dict = {
     aboutP2:
       'My current research focuses on computer vision, edge computing and cross-platform artificial intelligence applications. I look forward to engaging and working with research and engineering teams in this field.',
     addressLabel: 'Location',
+    copyEmail: 'Copy email',
     educationTitle: 'Education',
     school: 'HUTECH University',
     major: 'Information Technology - Machine Learning & Applications',
@@ -43,7 +44,6 @@ const dict = {
     contactTitle: 'Contact',
     contactLede: 'Happy to talk about internships, collaboration or AI projects.',
     location: 'Bien Hoa, Dong Nai, Vietnam',
-    sendEmail: 'Send an email',
     quote: 'Learn, grow and share AI knowledge.',
   },
 } as const;
