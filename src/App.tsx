@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { email, facebookUrl, githubUrl, linkedinUrl, phoneDecode, phoneMasked } from './data/content';
+import { email, facebookUrl, githubUrl, linkedinUrl } from './data/content';
 import { icons } from './data/icons';
 import { useI18n, type Key } from './i18n';
 
@@ -76,30 +75,6 @@ function Education() {
   );
 }
 
-function PhoneCopy() {
-  const { t } = useI18n();
-  const [copied, setCopied] = useState(false);
-  const copy = async () => {
-    try {
-      await navigator.clipboard.writeText(phoneDecode());
-    } catch {
-      const ta = document.createElement('textarea');
-      ta.value = phoneDecode();
-      document.body.appendChild(ta);
-      ta.select();
-      document.execCommand('copy');
-      ta.remove();
-    }
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
-  return (
-    <button type="button" className="copy-link" onClick={copy} title={t('copyHint')}>
-      {copied ? t('copied') : phoneMasked}
-    </button>
-  );
-}
-
 function Contact() {
   const { t } = useI18n();
   return (
@@ -110,10 +85,6 @@ function Contact() {
         <li className="row">
           <span>Email</span>
           <a href={`mailto:${email}`}>{email}</a>
-        </li>
-        <li className="row">
-          <span>{t('phoneLabel')}</span>
-          <PhoneCopy />
         </li>
         <li className="row">
           <span>{t('addressLabel')}</span>

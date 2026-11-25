@@ -14,9 +14,6 @@ const dict = {
     aboutP2:
       'Định hướng nghiên cứu hiện tại tập trung vào thị giác máy tính, điện toán biên và ứng dụng trí tuệ nhân tạo đa nền tảng. Tôi mong muốn được tiếp xúc và làm việc cùng các nhóm nghiên cứu, phát triển trong lĩnh vực này.',
     addressLabel: 'Địa chỉ',
-    phoneLabel: 'Điện thoại',
-    copyHint: 'Bấm để sao chép số điện thoại',
-    copied: 'Đã sao chép',
     educationTitle: 'Học vấn',
     school: 'HUTECH University',
     major: 'Công nghệ thông tin - Học máy & Ứng dụng',
@@ -40,9 +37,6 @@ const dict = {
     aboutP2:
       'My current research focuses on computer vision, edge computing and cross-platform artificial intelligence applications. I look forward to engaging and working with research and engineering teams in this field.',
     addressLabel: 'Location',
-    phoneLabel: 'Phone',
-    copyHint: 'Click to copy phone number',
-    copied: 'Copied',
     educationTitle: 'Education',
     school: 'HUTECH University',
     major: 'Information Technology - Machine Learning & Applications',
