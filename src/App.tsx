@@ -28,6 +28,7 @@ function Flag({ lang }: { lang: Lang }) {
 
 function Header() {
   const { t, lang, setLang } = useI18n();
+  const other: Lang = lang === 'vi' ? 'en' : 'vi';
   const links: [string, Key][] = [
     ['about', 'navAbout'],
     ['education', 'navEducation'],
@@ -44,20 +45,15 @@ function Header() {
             </a>
           ))}
         </nav>
-        <div className="lang-switch" role="group" aria-label="Language">
-          {(['vi', 'en'] as Lang[]).map((l) => (
-            <button
-              key={l}
-              type="button"
-              className={l === lang ? 'active' : ''}
-              onClick={() => setLang(l)}
-              aria-pressed={l === lang}
-              aria-label={l === 'vi' ? 'Tiếng Việt' : 'English'}
-              title={l === 'vi' ? 'Tiếng Việt' : 'English'}
-            >
-              <Flag lang={l} />
-            </button>
-          ))}
+        <div className="lang-switch">
+          <button
+            type="button"
+            onClick={() => setLang(other)}
+            aria-label={other === 'vi' ? 'Tiếng Việt' : 'English'}
+            title={other === 'vi' ? 'Tiếng Việt' : 'English'}
+          >
+            <Flag lang={other} />
+          </button>
         </div>
       </div>
     </header>
