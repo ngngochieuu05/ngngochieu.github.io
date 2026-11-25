@@ -193,6 +193,18 @@ h1, h2 {
 .avatar { transition: box-shadow 0.3s ease; }
 .avatar:hover { box-shadow: 0 0 0 4px var(--b1), 0 10px 24px rgba(28, 25, 23, 0.25); }
 
+/* Back to top */
+.to-top { position: fixed; right: 24px; bottom: 24px; z-index: 40; display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; padding: 0; background: var(--primary); color: var(--bg); border: 2px solid var(--primary); border-radius: 14px; cursor: pointer; opacity: 0; visibility: hidden; transform: translateY(16px); transition: opacity 0.25s, visibility 0.25s, transform 0.25s, box-shadow 0.18s, background-color 0.18s; }
+.to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+.to-top:hover { background: var(--primary-hover); transform: translateY(-3px); box-shadow: var(--lift), inset 0 1px 0 var(--gloss); }
+.to-top:active { transform: translateY(0); box-shadow: var(--lift-press); }
+
+/* Rounded buttons */
+.btn { border-radius: 12px; }
+.lang-switch button { border-radius: 10px; }
+.copy-btn { border-radius: 8px; }
+.socials a { border-radius: 12px; }
+
 /* Raised, glossy buttons on hover */
 .btn, .lang-switch button, .copy-btn, .socials a {
   position: relative;

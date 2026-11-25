@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import type { Lang } from './data/content';
 import { email, facebookUrl, githubUrl, linkedinUrl } from './data/content';
 import { icons } from './data/icons';
@@ -202,6 +202,31 @@ function Socials() {
   );
 }
 
+function BackToTop() {
+  const { t } = useI18n();
+  const [show, setShow] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setShow(window.scrollY > 300);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+  return (
+    <button
+      type="button"
+      className={show ? 'to-top show' : 'to-top'}
+      onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+      aria-label={t('backToTop')}
+      title={t('backToTop')}
+      tabIndex={show ? 0 : -1}
+    >
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
+        <path d="M12 19V5M5 12l7-7 7 7" />
+      </svg>
+    </button>
+  );
+}
+
 export default function App() {
   const { t } = useI18n();
   return (
@@ -213,6 +238,7 @@ export default function App() {
         <Education />
         <Contact />
       </main>
+      <BackToTop />
       <footer className="wrap narrow footer">
         <Socials />
         <p className="caption">© 2026 Nguyễn Ngọc Hiếu · {t('quote')}</p>
