@@ -11,6 +11,9 @@
   --b1: #d6d3d1;
   --b2: #a8a29e;
   --focus: 0 0 0 2px var(--bg), 0 0 0 4px var(--primary);
+  --lift: 0 8px 16px rgba(28, 25, 23, 0.22), 0 2px 4px rgba(28, 25, 23, 0.16);
+  --lift-press: 0 2px 4px rgba(28, 25, 23, 0.2);
+  --gloss: rgba(255, 255, 255, 0.45);
   --primary-hover: #57534e;
   --primary-active: #44403c;
   color-scheme: light;
@@ -22,6 +25,9 @@
 :root[data-theme='dark'] {
   --primary: #d6d3d1;
   --primary-hover: #e7e5e4;
+  --lift: 0 8px 18px rgba(0, 0, 0, 0.6), 0 2px 4px rgba(0, 0, 0, 0.5);
+  --lift-press: 0 2px 4px rgba(0, 0, 0, 0.55);
+  --gloss: rgba(255, 255, 255, 0.22);
   --primary-active: #fafaf9;
   --secondary: #78716c;
   --ink: #fafaf9;
@@ -132,4 +138,30 @@ p { margin: 0 0 var(--u); }
 .theme-wave span { flex: 1; transform: translateY(-100%); animation: theme-fall cubic-bezier(0.55, 0, 0.8, 0.4) forwards; }
 @keyframes theme-fall { to { transform: translateY(0); } }
 
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+/* Raised, glossy buttons on hover */
+.btn, .lang-switch button, .copy-btn, .socials a {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+}
+.btn::after, .lang-switch button::after, .copy-btn::after, .socials a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 30%, var(--gloss) 50%, transparent 70%);
+  transform: translateX(-120%);
+  transition: transform 0.55s ease;
+  pointer-events: none;
+}
+.btn:hover, .lang-switch button:hover, .copy-btn:hover, .socials a:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--lift), inset 0 1px 0 var(--gloss);
+}
+.btn:hover::after, .lang-switch button:hover::after, .copy-btn:hover::after, .socials a:hover::after { transform: translateX(120%); }
+.btn:active, .lang-switch button:active, .copy-btn:active, .socials a:active { transform: translateY(0); box-shadow: var(--lift-press); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn:hover, .lang-switch button:hover, .copy-btn:hover, .socials a:hover { transform: none; }
+  .btn::after, .lang-switch button::after, .copy-btn::after, .socials a::after { display: none; }
+}
