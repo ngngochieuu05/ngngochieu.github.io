@@ -105,7 +105,7 @@ function Hero() {
   return (
     <section id="top" className="hero wrap narrow">
       <img className="avatar avatar-light" src={`${base}images/avatar.jpeg`} alt="Nguyễn Ngọc Hiếu" width={220} height={220} />
-      <img className="avatar avatar-dark" src={`${base}images/avatar-dark.jpg`} alt="" aria-hidden="true" width={220} height={220} />
+      <img className="avatar avatar-dark" src={`${base}images/avatar-dark2.jpg`} alt="" aria-hidden="true" width={220} height={220} />
       <h1>Nguyễn Ngọc Hiếu</h1>
       <div className="actions">
         <a className="btn btn-primary" href="#contact">
