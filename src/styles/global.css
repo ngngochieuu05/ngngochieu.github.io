@@ -222,6 +222,9 @@ h1, h2 {
 .to-top:hover { background: var(--primary-hover); transform: translateY(-3px); box-shadow: var(--lift), inset 0 1px 0 var(--gloss); }
 .to-top:active { transform: translateY(0); box-shadow: var(--lift-press); }
 
+/* Inside the pill the hover lift would be clipped by its overflow, so keep these flat */
+.pill .lang-switch button:hover, .pill .lang-switch button:active { transform: none; box-shadow: inset 0 1px 0 var(--gloss); }
+
 /* Locked button */
 .btn.locked { display: inline-flex; align-items: center; gap: 8px; opacity: 0.55; cursor: not-allowed; }
 .btn.locked:hover { transform: none; box-shadow: none; background: transparent; }
