@@ -10,7 +10,7 @@ const dict = {
     downloadCv: 'Xem CV',
     aboutTitle: 'Giới thiệu',
     aboutP1:
-      'Tôi là sinh viên năm thứ tư chuyên ngành Công nghệ thông tin tại Trường Đại học Công nghệ TP.HCM (HUTECH), dự kiến tốt nghiệp năm 2027. Tôi đam mê nghiên cứu và phát triển các hệ thống thị giác máy tính, đặc biệt là nhận diện và giám sát đối tượng bằng học sâu.',
+      'Tôi là sinh viên năm thứ tư chuyên ngành Công nghệ thông tin tại HUTECH University, dự kiến tốt nghiệp năm 2027. Tôi đam mê nghiên cứu và phát triển các hệ thống thị giác máy tính, đặc biệt là nhận diện và giám sát đối tượng bằng học sâu.',
     aboutP2:
       'Định hướng nghiên cứu hiện tại tập trung vào thị giác máy tính, điện toán biên và ứng dụng trí tuệ nhân tạo đa nền tảng. Tôi mong muốn được tiếp xúc và làm việc cùng các nhóm nghiên cứu, phát triển trong lĩnh vực này.',
     addressLabel: 'Địa chỉ',
@@ -18,7 +18,7 @@ const dict = {
     copyHint: 'Bấm để sao chép số điện thoại',
     copied: 'Đã sao chép',
     educationTitle: 'Học vấn',
-    school: 'Đại học Công nghệ TP.HCM (HUTECH)',
+    school: 'HUTECH University',
     major: 'Công nghệ thông tin - Học máy & Ứng dụng',
     schoolPeriod: '09/2023 – Hiện tại',
     contactTitle: 'Liên hệ',
@@ -36,7 +36,7 @@ const dict = {
     downloadCv: 'View CV',
     aboutTitle: 'About',
     aboutP1:
-      'I am a fourth-year Information Technology student at Ho Chi Minh City University of Technology (HUTECH), expected to graduate in 2027. I am dedicated to researching and developing computer vision systems, particularly deep-learning-based object detection and monitoring.',
+      'I am a fourth-year Information Technology student at HUTECH University, expected to graduate in 2027. I am dedicated to researching and developing computer vision systems, particularly deep-learning-based object detection and monitoring.',
     aboutP2:
       'My current research focuses on computer vision, edge computing and cross-platform artificial intelligence applications. I look forward to engaging and working with research and engineering teams in this field.',
     addressLabel: 'Location',
@@ -44,7 +44,7 @@ const dict = {
     copyHint: 'Click to copy phone number',
     copied: 'Copied',
     educationTitle: 'Education',
-    school: 'Ho Chi Minh City University of Technology (HUTECH)',
+    school: 'HUTECH University',
     major: 'Information Technology - Machine Learning & Applications',
     schoolPeriod: '09/2023 – Present',
     contactTitle: 'Contact',
