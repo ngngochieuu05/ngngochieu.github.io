@@ -34,7 +34,7 @@ function Hero() {
   const { t } = useI18n();
   return (
     <section id="top" className="hero wrap narrow">
-      <img className="avatar" src={`${base}images/logo.png`} alt="Logo Nguyễn Ngọc Hiếu" width={220} height={220} />
+      <img className="avatar" src={`${base}images/avatar.jpeg`} alt="Nguyễn Ngọc Hiếu" width={220} height={220} />
       <h1>Nguyễn Ngọc Hiếu</h1>
       <div className="actions">
         <a className="btn btn-primary" href="#contact">
