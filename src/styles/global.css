@@ -139,9 +139,9 @@ p { margin: 0 0 var(--u); }
 
 .footer { padding-top: 48px; padding-bottom: 48px; border-top: 2px solid var(--b1); text-align: center; }
 
-.theme-wave { position: fixed; inset: 0; z-index: 100; display: flex; pointer-events: all; transition: opacity 350ms ease; }
+.theme-wave { position: fixed; inset: 0; z-index: 100; display: flex; overflow: hidden; pointer-events: all; transition: opacity 500ms ease; }
 .theme-wave.fade { opacity: 0; pointer-events: none; }
-.theme-wave span { flex: 1; transform: translateY(-100%); animation: theme-fall cubic-bezier(0.55, 0, 0.8, 0.4) forwards; }
+.theme-wave span { flex: 1 0 0; margin: 0 -3px; height: calc(100% + 80px); border-radius: 0 0 999px 999px; transform: translateY(calc(-100% - 20px)); animation: theme-fall cubic-bezier(0.32, 0.02, 0.18, 1) forwards; will-change: transform; }
 @keyframes theme-fall { to { transform: translateY(0); } }
 
 /* Soft gleam across the whole page (very subtle) */

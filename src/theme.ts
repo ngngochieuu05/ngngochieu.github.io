@@ -3,14 +3,15 @@ import { useEffect, useRef, useState } from 'react';
 export type Theme = 'light' | 'dark';
 
 const COVER: Record<Theme, string> = { light: '#fafaf9', dark: '#1c1917' };
-const COLUMNS = 14;
-const FALL_MS = 650;
-const MAX_DELAY_MS = 350;
-const FADE_MS = 350;
+const COLUMNS = 22;
+const FALL_MS = 900;
+const MAX_DELAY_MS = 500;
+const FADE_MS = 500;
 
 const initial = (): Theme => (document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light');
 
-// Columns of the new theme's background "fall" from the top like a waterfall;
+// Rounded columns of the new theme's background "fall" from the top like a waterfall,
+// with neighbouring delays following a smooth wave so the front edge flows;
 // once the page is fully covered the theme is swapped and the cover fades away.
 function waterfall(next: Theme, apply: () => void) {
   const wave = document.createElement('div');
@@ -19,7 +20,7 @@ function waterfall(next: Theme, apply: () => void) {
     const col = document.createElement('span');
     col.style.background = COVER[next];
     col.style.animationDuration = `${FALL_MS}ms`;
-    col.style.animationDelay = `${Math.round(Math.abs(Math.sin(i * 12.9898)) * MAX_DELAY_MS)}ms`;
+    col.style.animationDelay = `${Math.round((0.5 + 0.5 * Math.sin(i * 0.55 + 0.8)) * MAX_DELAY_MS)}ms`;
     wave.appendChild(col);
   }
   document.body.appendChild(wave);
