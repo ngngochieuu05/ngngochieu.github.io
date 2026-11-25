@@ -31,51 +31,64 @@ function Flag({ lang }: { lang: Lang }) {
 function Header() {
   const { t, lang, setLang } = useI18n();
   const { theme, toggle: toggleTheme } = useTheme();
+  const [open, setOpen] = useState(false);
   const other: Lang = lang === 'vi' ? 'en' : 'vi';
   const links: [string, Key][] = [
     ['about', 'navAbout'],
     ['education', 'navEducation'],
     ['contact', 'navContact'],
   ];
+  const [first, ...rest] = links;
   return (
-    <header className="site-header">
-      <div className="wrap header-row">
-        <span />
-        <nav aria-label="Primary">
-          {links.map(([id, k]) => (
-            <a key={id} href={`#${id}`}>
+    <header
+      className={open ? 'pill open' : 'pill'}
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+      onFocus={() => setOpen(true)}
+      onBlur={(e) => {
+        if (!e.currentTarget.contains(e.relatedTarget as Node | null)) setOpen(false);
+      }}
+    >
+      <nav aria-label="Primary" className="pill-nav">
+        <a href={`#${first[0]}`}>{t(first[1])}</a>
+        <div className="pill-extra" aria-hidden={!open}>
+          {rest.map(([id, k]) => (
+            <a key={id} href={`#${id}`} tabIndex={open ? 0 : -1}>
               {t(k)}
             </a>
           ))}
-        </nav>
-        <div className="lang-switch">
-          <button
-            type="button"
-            onClick={toggleTheme}
-            aria-label={theme === 'dark' ? t('lightMode') : t('darkMode')}
-            title={theme === 'dark' ? t('lightMode') : t('darkMode')}
-          >
-            {theme === 'dark' ? (
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-                <circle cx="12" cy="12" r="4" />
-                <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
-              </svg>
-            ) : (
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-                <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" />
-              </svg>
-            )}
-          </button>
-          <button
-            type="button"
-            onClick={() => setLang(other)}
-            aria-label={other === 'vi' ? 'Tiếng Việt' : 'English'}
-            title={other === 'vi' ? 'Tiếng Việt' : 'English'}
-          >
-            <Flag lang={other} />
-          </button>
+          <span className="pill-sep" />
+          <div className="lang-switch">
+            <button
+              type="button"
+              tabIndex={open ? 0 : -1}
+              onClick={toggleTheme}
+              aria-label={theme === 'dark' ? t('lightMode') : t('darkMode')}
+              title={theme === 'dark' ? t('lightMode') : t('darkMode')}
+            >
+              {theme === 'dark' ? (
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                  <circle cx="12" cy="12" r="4" />
+                  <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+                </svg>
+              ) : (
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                  <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" />
+                </svg>
+              )}
+            </button>
+            <button
+              type="button"
+              tabIndex={open ? 0 : -1}
+              onClick={() => setLang(other)}
+              aria-label={other === 'vi' ? 'Tiếng Việt' : 'English'}
+              title={other === 'vi' ? 'Tiếng Việt' : 'English'}
+            >
+              <Flag lang={other} />
+            </button>
+          </div>
         </div>
-      </div>
+      </nav>
     </header>
   );
 }
