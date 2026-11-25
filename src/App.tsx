@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type { Lang } from './data/content';
 import { cvUrl, email, facebookUrl, githubUrl, linkedinUrl } from './data/content';
 import { icons } from './data/icons';
@@ -34,6 +34,7 @@ function Header() {
   const { t, lang, setLang } = useI18n();
   const { theme, toggle: toggleTheme } = useTheme();
   const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLElement>(null);
   const other: Lang = lang === 'vi' ? 'en' : 'vi';
   const links: [string, Key][] = [
     ['about', 'navAbout'],
@@ -41,8 +42,21 @@ function Header() {
     ['contact', 'navContact'],
   ];
   const active = useActiveSection(links.map(([id]) => id));
+
+  // Touch screens have no hover: close the pill when tapping outside of it.
+  useEffect(() => {
+    const onDown = (e: PointerEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    };
+    document.addEventListener('pointerdown', onDown);
+    return () => document.removeEventListener('pointerdown', onDown);
+  }, []);
+  const closeAfterTap = (e: React.PointerEvent) => {
+    if (e.pointerType === 'touch') window.setTimeout(() => setOpen(false), 200);
+  };
   return (
     <header
+      ref={ref}
       className={open ? 'pill open' : 'pill'}
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
@@ -57,6 +71,7 @@ function Header() {
             key={id}
             href={`#${id}`}
             className={id === active ? 'active' : ''}
+            onPointerUp={closeAfterTap}
             tabIndex={open || id === active ? 0 : -1}
             aria-current={id === active ? 'true' : undefined}
           >
